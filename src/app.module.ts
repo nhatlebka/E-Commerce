@@ -9,6 +9,8 @@ import { MongoModule } from './mongodb/mongo.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ImagesModule } from './modules/images/images.module';
 import { CategoryModule } from './modules/category/category.module';
+import { ProductsModule } from './modules/products/products.module';
+import { VouchersModule } from './modules/vouchers/vouchers.module';
 
 @Module({
   imports: [
@@ -17,6 +19,8 @@ import { CategoryModule } from './modules/category/category.module';
     AuthModule,
     ImagesModule,
     CategoryModule,
+    ProductsModule,
+    VouchersModule,
   ],
   controllers: [],
   providers: [
