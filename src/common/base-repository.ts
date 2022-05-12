@@ -10,7 +10,7 @@ export abstract class BaseRepository<T extends Document> {
   }
 
   async findOne(query: FilterQuery<T>): Promise<T | null> {
-    return this.entityModel.findOne(query).exec();
+    return this.entityModel.findOne(query);
   }
 
   async paginate(
@@ -26,6 +26,10 @@ export abstract class BaseRepository<T extends Document> {
       .limit(limit)
       .sort(sort)
       .exec();
+  }
+
+  async getCount(query: FilterQuery<T>): Promise<any> {
+    return this.entityModel.countDocuments(query);
   }
 
   async findWithRelation(
