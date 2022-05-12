@@ -72,6 +72,9 @@ export class CategoryController {
   ): Promise<ICategoryRes> {
     try {
       const rs = await this.categoryService.updateCategory(id, data);
+      if (!rs) {
+        throw new HttpException('Cannot find category', 400);
+      }
       return rs;
     } catch (error) {
       throw new HttpException(error.message, error.status || 500);

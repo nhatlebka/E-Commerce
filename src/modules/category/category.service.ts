@@ -51,4 +51,8 @@ export class CategoryService {
   async deleteCategory(id: string): Promise<IRes> {
     return this.categoryRepository.delete({ _id: id });
   }
+
+  async findByName(name: string): Promise<ICategoryRes> {
+    return this.categoryRepository.findOne({ name });
+  }
 }
